@@ -1,0 +1,93 @@
+body {
+    font-family: sans-serif;
+}
+
+header {
+    font-size: default;
+    background-color: #92E0E5;
+    padding: 2px;
+}
+
+a {
+    color: white;
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+}
+
+#header-icon{
+    width:40px;
+    height:40px;
+}
+
+#nav-bar{
+    float: right;
+}
+
+.nav-bar-item{
+    display: inline-block;
+    color: white;
+}
+
+.titlebar{
+    background-image: url("../images/park.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align: center;
+    font-size: 1em;
+
+    padding: 10px;
+}
+
+.titlebar-img{
+    left:auto;
+    right:auto;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #7AA392;
+    height: 33%;
+    width: 33%;
+}
+
+.article-img{
+    left:auto;
+    right:auto;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #7AA392;
+    width: 50%;
+}
+
+article {
+    float: left;
+    width: 29%;
+    padding: 2%;
+    text-align: center;
+}
+
+button {
+    color: #7AA392;
+    border: #7AA392;
+    border: 2px;
+    border-style: solid;
+}
+
+footer {
+    background-color: #3F8DA7;
+    text-align: center;
+    padding: 8px;
+}
+
+.social-img {
+    margin: 4px 8px 8px 4px;
+}
+
+li{
+    margin: 0px 10px 10px 4px;
+}
