@@ -38,7 +38,6 @@ button{
     background-size: cover;
 
     text-align: center;
-    font-size: 1em;
 
     padding: 10px;
 }
@@ -90,4 +89,8 @@ footer {
 
 li{
     margin: 0px 10px 10px 4px;
+}
+
+.socialButtons{
+    margin: 20px;
 }
