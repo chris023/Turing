@@ -17,6 +17,8 @@ let highVal = 100;
 //Sets the value we are trying to guess randomly
 let targetVal = generateTargetVal();
 
+
+//Guess Button Handler
 guessButton.addEventListener("click", function(){
     
     let guessVal = parseInt(document.querySelector("#guessValue").value);
@@ -36,10 +38,12 @@ guessButton.addEventListener("click", function(){
         
 });
 
+//Clear Button Handler
 clearButton.addEventListener("click", function(){
     document.querySelector("#guessValue").value = "";
 });
 
+//Reset Button Handler
 resetButton.addEventListener("click", function() {
     
     lastGuess.innerText = "?"
@@ -48,6 +52,7 @@ resetButton.addEventListener("click", function() {
 
 });
 
+//Checks if input data is a number; Updates input validity state if not;
 function validInput(value){
     isValid = (lowVal <= value && value <= highVal);
     
@@ -57,9 +62,10 @@ function validInput(value){
         document.querySelector("#guessValue").setCustomValidity("Invalid Input");   
     }
 
-   return (lowVal <= value && value <= highVal);
+   return isValid;
 }
 
+//Creates a random number between high and low value
 function generateTargetVal(){
     return Math.round((Math.random()*highVal-lowVal) + lowVal);
 }
