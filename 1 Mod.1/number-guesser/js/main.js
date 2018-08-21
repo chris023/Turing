@@ -6,9 +6,16 @@ const resetButton = document.querySelector("#resetButton");
 //Input Field
 const formInput = document.querySelector("#guessValue");
 
-//Displays result on screen
+//Displays game result on screen
 let gameResult = document.querySelector("#gameResult");
-let result = ["Make a guess!","BOOM!", "That is too high", "That is too low"];
+
+//Possible results to display
+let results = {
+    default: "Make a guess!",
+    correct: "BOOM!",
+    tooHigh: "That is too high",
+    tooLow: "That is too low"
+}
 
 //Displays most recent guess
 let lastGuess = document.querySelector("#lastGuess");
@@ -34,15 +41,15 @@ guessButton.addEventListener("click", function(){
 
         lastGuess.innerHTML = guessVal;
 
-        if      (guessVal === targetVal)   gameResult.innerHTML = result[1];
-        else if (guessVal > targetVal)     gameResult.innerHTML = result[2];
-        else if (guessVal < targetVal)     gameResult.innerHTML = result[3];
+        if      (guessVal === targetVal)   gameResult.innerHTML = results.correct;
+        else if (guessVal > targetVal)     gameResult.innerHTML = results.tooHigh;
+        else if (guessVal < targetVal)     gameResult.innerHTML = results.tooLow;
     }
 
 
     //Handles reset button state
-    if(gameResult.innerText === result[0])      {     resetButton.disabled = true;    }
-    else                                        {     resetButton.disabled = false;   }
+    if(gameResult.innerText === results.default)      {     resetButton.disabled = true;    }
+    else                                              {     resetButton.disabled = false;   }
         
 });
 
