@@ -1,39 +1,47 @@
-<!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Number Guesser</title>
+        
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css"> 
         
     </head>
     <body>
         <header>
-            <h1><span id="headline-number">Number</span> Guesser</h1>
-            <!-- <div class=line2>
-                <button id="directionsButton">Directions</button>
-                <button id="toggleGameModeButton">Advanced</button>
-            </div> -->
+            <h1> <span id="headline-number">Number</span> Guesser</h1>
         </header>
 
         <section id="basic">
 
-            <div class="line">
-                <button id="guessButton">Guess</button>
-                <button id="clearButton">Clear</button>
-            </div>
-
             <input id="guessValue" type="text" placeholder="Enter your guess">
-            <br>
+            <button id="guessButton" disabled>Guess</button>
+            <button id="clearButton" disabled>Clear</button>
             
+            <br>
+            <br>
 
             <p>Your last guess was</p>
             <p id="lastGuess">?</p>
             <p id="gameResult">Make a guess!</p>
             
-            
+            <br>
+            <br>
                 
-                <button id="resetButton">Reset</button> 
+            <button id="resetButton" disabled>Reset</button> 
             
         </section>
+
+        <section id="settings">
+
+        </section>
+
+        <setting id="advanced">
+
+        </setting>
 
         
     </body>

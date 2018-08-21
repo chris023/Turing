@@ -3,6 +3,9 @@ const guessButton = document.querySelector("#guessButton");
 const clearButton = document.querySelector("#clearButton");
 const resetButton = document.querySelector("#resetButton");
 
+//Input Field
+const formInput = document.querySelector("#guessValue");
+
 //Displays result on screen
 let gameResult = document.querySelector("#gameResult");
 let result = ["Make a guess!","BOOM!", "That is too high", "That is too low"];
@@ -35,37 +38,58 @@ guessButton.addEventListener("click", function(){
         else if (guessVal > targetVal)     gameResult.innerHTML = result[2];
         else if (guessVal < targetVal)     gameResult.innerHTML = result[3];
     }
+
+
+    //Handles reset button state
+    if(gameResult.innerText === result[0])      {     resetButton.disabled = true;    }
+    else                                        {     resetButton.disabled = false;   }
         
 });
 
 
 
-//Clear Button Handler
+
+//Clear Button click Handler
 clearButton.addEventListener("click", function(){
-    document.querySelector("#guessValue").value = "";
+    formInput.value = "";
+    disableClearGuess();
 });
 
-function whatHappensWhenIClickTheClearButton(){
-    document.querySelector("#guessValue").value = "";
-}
-
-//Reset Button Handler
+//Reset Button Click Handler
 resetButton.addEventListener("click", function() {
     
     lastGuess.innerText = "?"
     gameResult.innerText = result[0];
     targetVal = generateTargetVal();
+    resetButton.disabled = true;
 
 });
+
+//Clear, Guess Button state handler
+formInput.addEventListener("keyup", function(){
+    disableClearGuess();
+})
+
+//Disables clear and guess button when input is empty
+function disableClearGuess() {
+    if (formInput.value.length === 0) {
+        clearButton.disabled = true;
+        guessButton.disabled = true;
+    }
+    else {
+        clearButton.disabled = false;
+        guessButton.disabled = false;
+    }
+}
 
 //Checks if input data is a number; Updates input validity state if not;
 function validInput(value){
     isValid = (lowVal <= value && value <= highVal);
     
     if (isValid) 
-        document.querySelector("#guessValue").setCustomValidity("");  
+        formInput.setCustomValidity("");  
     else{   
-        document.querySelector("#guessValue").setCustomValidity("Invalid Input");   
+        formInput.setCustomValidity("Invalid Input");   
     }
 
    return isValid;
