@@ -1,7 +1,7 @@
 // Buttons
-let guessButton = document.querySelector("#guessButton");
-let clearButton = document.querySelector("#clearButton");
-let resetButton = document.querySelector("#resetButton");
+const guessButton = document.querySelector("#guessButton");
+const clearButton = document.querySelector("#clearButton");
+const resetButton = document.querySelector("#resetButton");
 
 //Displays result on screen
 let gameResult = document.querySelector("#gameResult");
@@ -38,10 +38,16 @@ guessButton.addEventListener("click", function(){
         
 });
 
+
+
 //Clear Button Handler
 clearButton.addEventListener("click", function(){
     document.querySelector("#guessValue").value = "";
 });
+
+function whatHappensWhenIClickTheClearButton(){
+    document.querySelector("#guessValue").value = "";
+}
 
 //Reset Button Handler
 resetButton.addEventListener("click", function() {
