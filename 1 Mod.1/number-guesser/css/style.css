@@ -51,6 +51,12 @@ input[type="text"]{
     margin: 35px auto;
     font-size:25px;
     width: 95%;
+    outline-color: #EB008B;
+}
+
+input[type=text]:focus {
+    box-shadow: 0 0 5px #EB008B;
+    border: 1px solid #EB008B;
 }
 
 ::placeholder{
@@ -59,10 +65,22 @@ input[type="text"]{
     opacity: 1;
 }
 
-.line{
-    width: 100%;
-    margin: 20px 0;
+.hide{
+    display: none;
 }
+
+.infoBox {
+    position: relative;
+    width: 425px;
+    font-size: 25px;
+    padding: 10px;
+    border: solid 2px;
+    border-color: #929497;
+    background-color: #d0d2d3;
+    color: white;
+    clear: both;
+}
+
 
 #headline-number{
     color: #ed458b;
@@ -84,3 +102,40 @@ input[type="text"]{
     font-weight: 100;
 }
 
+#settingsIco {
+    height: 35px;
+    width: 35px;
+    margin: 10px 0;
+    float: right;
+}
+
+#helpIco {
+    height: 35px;
+    width: 35px;
+    margin: 10px 0;
+    float: right;
+}
+
+#helpDialog{
+    width: 800px;
+    text-align: left;
+    padding: 20px;
+}
+
+#credits{
+    text-align: right;
+    font-size: 10px;
+}
+
+#lowVal,
+#highVal {
+    margin: 15px;
+    width: 100px;
+}
+
+#closeSettings,
+#closeHelp {
+    position: absolute;
+    top: 0px;
+    right: 8px;
+}

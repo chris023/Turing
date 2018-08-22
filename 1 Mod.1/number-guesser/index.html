@@ -15,10 +15,32 @@
             <h1> <span id="headline-number">Number</span> Guesser</h1>
         </header>
 
-        <img src="" alt="">
-        <img src="" alt="">
-        
-        <section id="basic">
+        <img src="./img/gear.png" id="settingsIco" class="clearfix">
+        <img src="./img/help.png" id="helpIco" class="clearfix">
+
+        <section id="settingsWindow" class="hide infoBox">
+            <h4 id="closeSettings">&#10006</h4>
+            <h3>Settings | Level <span id="currentLevel">1</span></h3>
+            <span>Low</span>
+            <input id="lowVal" type="text" placeholder="Low " value="0">
+            <br>
+            <span>High</span>
+            <input id="highVal" type="text" placeholder="High" value="100">
+            
+        </section>
+
+        <section id="helpDialog" class="hide infoBox">
+            <h4 id="closeHelp">&#10006</h4>
+            <h3>Objective: </h3>
+            <br>
+            <p>The objective of this game is to guess a randomly generated value between the high and low values specified in the settings.
+            The default range is between 0 and 100. Each time a value is correctly guessed, the high value will increase by 10 and a
+            new random number will be generated.</p>
+            <p id="credits">Created by Chris Meyer <br> 2018 Turing Project</p>
+
+        </section>
+
+        <section id="gameWindow">
 
             <input id="guessValue" type="text" placeholder="Enter your guess">
             <button id="guessButton" disabled>Guess</button>
@@ -37,14 +59,6 @@
             <button id="resetButton" disabled>Reset</button> 
             
         </section>
-
-        <section id="settings">
-
-        </section>
-
-        <setting id="advanced">
-
-        </setting>
 
         
     </body>
