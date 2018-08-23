@@ -38,8 +38,8 @@ let results = {
 let lastGuess = document.querySelector("#lastGuess");
 
 //Sets game's high and low values to guess between
-let lowVal = parseInt(lowValField.value);
-let highVal = parseInt(highValField.value);
+let lowVal = 0;
+let highVal = 100;
 
 //Sets the value we are trying to guess randomly
 let targetVal = generateTargetVal();
@@ -145,8 +145,8 @@ function disableClearGuess() {
 }
 
 //Checks if input data is a number; Updates input validity state if not;
-function validInput(value){
-    let isValid = (lowVal <= value && value <= highVal);
+function validInput(userValue){
+    let isValid = (lowVal <= userValue && userValue <= highVal); 
     
     if (isValid) 
         formInput.setCustomValidity("");  

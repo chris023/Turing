@@ -59,6 +59,11 @@ input[type=text]:focus {
     border: 1px solid #EB008B;
 }
 
+input[type=text]:invalid {
+    box-shadow: 0 0 10px rgb(255, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
+}
+
 ::placeholder{
     color: lightgray;
     font-weight: 100;
