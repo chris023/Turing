@@ -132,10 +132,22 @@ input[type=text]:invalid {
     font-size: 10px;
 }
 
+#settingsWindow{
+    position: relative;
+}
+
+
 #lowVal,
 #highVal {
+    position: relative;
+    left: 10px;
     margin: 15px;
     width: 100px;
+}
+
+#lowVal {
+    /* This is gross */
+    transform: translateX(3px);
 }
 
 #closeSettings,

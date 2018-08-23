@@ -65,15 +65,48 @@ guessButton.addEventListener("click", function(){
 
 
     //Handles reset button state
-    if(gameResult.innerText === results.default)      {     resetButton.disabled = true;    }
-    else                                              {     resetButton.disabled = false;   }
+    if(gameResult.innerText === results.default)
+        resetButton.disabled = true;    
+    else {     
+        resetButton.disabled = false;
+    }
         
 });
 
 
+//Handles the low value field in the settings dialog
+lowValField.addEventListener("keyup", function(){
 
+    if(validValFields()){
+        
+        clearValFieldsValidity();
+    
+        if(lowVal !== parseInt(lowValField.value)){
+            lowVal = parseInt(lowValField.value);
+            resetGame();
+        }
+    } else{
+        //highlights box red if invalid
+        lowValField.setCustomValidity("Invalid Input");
+    }
+});
 
+//Handles the high value field in the settings dialog
+highValField.addEventListener("keyup", function(){
+    
+    if(validValFields()){
 
+        clearValFieldsValidity();
+        
+        if(highVal !== parseInt(highValField.value)){
+            highVal = parseInt(highValField.value);
+            resetGame();
+        }
+    } else{
+        //highlights box red if invalid
+        highValField.setCustomValidity("Invalid Input");
+    }
+});
 
 //Clear Button click Handler
 clearButton.addEventListener("click", function(){
@@ -82,32 +115,16 @@ clearButton.addEventListener("click", function(){
 });
 
 //Reset Button Click Handler
-resetButton.addEventListener("click", function() {
-    resetGame();
-});
+resetButton.addEventListener("click", function()    {   resetGame();                    });
 
 //Clear, Guess Button state handler
-formInput.addEventListener("keyup", function(){
-    disableClearGuess();
-});
+formInput.addEventListener("keyup", function()      {   disableClearGuess();            });
 
-//Help Button handler
-helpButton.addEventListener("click", function(){
-    toggleWindow(helpDialog);
-});
-
-exitHelp.addEventListener("click", function(){
-    toggleWindow(helpDialog);
-})
-
-//Settings Button handler
-settingsButton.addEventListener("click", function(){
-    toggleWindow(settingsWindow);
-});
-
-exitSettings.addEventListener("click", function(){
-    toggleWindow(settingsWindow);
-})
+//Help and Exit Button handlers
+helpButton.addEventListener("click", function()     {   toggleWindow(helpDialog);       });
+exitHelp.addEventListener("click", function()       {   toggleWindow(helpDialog);       });
+settingsButton.addEventListener("click", function() {   toggleWindow(settingsWindow);   });
+exitSettings.addEventListener("click", function()   {   toggleWindow(settingsWindow);   });
 
 function resetGame() {
     formInput.value = "";
@@ -157,17 +174,17 @@ function validInput(userValue){
    return isValid;
 }
 
-//Creates a random number between high and low value
-function generateTargetVal(){
-    return Math.round(Math.random()*(highVal-lowVal))+ lowVal;
-}
-
 //Toggles setting and help windows
 function toggleWindow(window){
 
     if(window.classList.contains("hide"))   {   window.classList.remove("hide");    }
     else                                    {   window.classList.add("hide");       }
 
+}
+
+//Creates a random number between high and low value
+function generateTargetVal() {
+    return Math.round(Math.random() * (highVal - lowVal)) + lowVal;
 }
 
 //
@@ -184,35 +201,3 @@ function clearValFieldsValidity(){
     lowValField.setCustomValidity("");
     highValField.setCustomValidity("");
 }
-
-lowValField.addEventListener("keyup", function(){
-
-    if(validValFields()){
-        
-        clearValFieldsValidity();
-    
-        if(lowVal !== parseInt(lowValField.value)){
-            lowVal = parseInt(lowValField.value);
-            resetGame();
-        }
-    } else{
-        //highlights box red if invalid
-        lowValField.setCustomValidity("Invalid Input");
-    }
-});
-
-highValField.addEventListener("keyup", function(){
-    
-    if(validValFields()){
-
-        clearValFieldsValidity();
-        
-        if(highVal !== parseInt(highValField.value)){
-            highVal = parseInt(highValField.value);
-            resetGame();
-        }
-    } else{
-        //highlights box red if invalid
-        highValField.setCustomValidity("Invalid Input");
-    }
-});
